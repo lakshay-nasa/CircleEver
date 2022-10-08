@@ -2,9 +2,11 @@ package com.example.circleever.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.circleever.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -25,4 +27,8 @@ val Typography = Typography(
         fontSize = 12.sp
     )
     */
+)
+
+val maryKate = FontFamily(
+    Font(R.font.marykate_regular, FontWeight.Normal)
 )
