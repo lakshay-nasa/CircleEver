@@ -15,20 +15,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CircleEverTheme {
-               MyApp(){
-                   startActivity(Intent(this, ProfileActivity:: class.java))
-               }
+               MyApp()
             }
         }
     }
 }
 
 @Composable
-fun MyApp(navigateToProfile: (Society) -> Unit){
-    Scaffold(
-        content = {
-            societyContent(navigateToProfile = navigateToProfile)
-        }
-    )
+fun MyApp(){
+    Navigation()
 
 }

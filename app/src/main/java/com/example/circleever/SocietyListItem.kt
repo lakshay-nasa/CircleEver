@@ -17,11 +17,15 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
 
 @Composable
-fun SocietyListItem(society: Society, navigateToProfile: (Society) -> Unit,){
+fun Societylistitem(society: Society, navController: NavController){
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
@@ -31,9 +35,9 @@ fun SocietyListItem(society: Society, navigateToProfile: (Society) -> Unit,){
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     ) {
         Row(
-            Modifier.clickable {navigateToProfile(society)}
+            Modifier.clickable{navController.navigate(SocietyScreens.SocietyView.route)}
         ) {
-            SocietyImage(society)
+            SocietyImage(society = society)
             Column(
                 modifier = Modifier
                     .padding(12.dp)
@@ -58,13 +62,4 @@ private fun SocietyImage(society: Society){
             .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
 
     )
-}
-
-
-
-@Preview
-@Composable
-fun PreviewSocietyProfile(){
-    val society = DataProvider.society
-    SocietyListItem(society = society, navigateToProfile = {})
 }

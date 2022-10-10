@@ -7,11 +7,16 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
 
 @Composable
-fun societyContent(navigateToProfile: (Society) -> Unit){
+fun societyContent(){
+    val navController = rememberNavController()
     val societies = remember { DataProvider.societylist}
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 12.dp , vertical = 4.dp)
@@ -19,9 +24,9 @@ fun societyContent(navigateToProfile: (Society) -> Unit){
         items(
             items = societies,
             itemContent = {
-                 SocietyListItem(
-                     society = it, navigateToProfile
-                 )
+                Societylistitem(
+                    society = it, navController = navController,
+                )
             }
         )
     }
