@@ -1,5 +1,6 @@
 package com.example.circleever
 
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -14,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,9 +25,16 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
+@Composable
+fun societyClicked(){
+
+
+}
+
 
 @Composable
 fun Societylistitem(society: Society, navController: NavController){
+//    var cardId = DataProvider.society
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
@@ -35,7 +44,10 @@ fun Societylistitem(society: Society, navController: NavController){
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     ) {
         Row(
-            Modifier.clickable{navController.navigate(SocietyScreens.SocietyView.route)}
+            // <------- Testing ------->
+//            Modifier.clickable(onClick = { Log.d("Button", "${society.title} is Clicked")})
+
+            Modifier.clickable( onClick = {navController.navigate(SocietyScreens.SocietyView.route)}),
         ) {
             SocietyImage(society = society)
             Column(
