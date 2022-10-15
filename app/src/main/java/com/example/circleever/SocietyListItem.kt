@@ -1,5 +1,6 @@
 package com.example.circleever
 
+import android.icu.text.CaseMap.Title
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -25,16 +26,15 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
+
+
 @Composable
 fun societyClicked(){
-
-
 }
 
 
 @Composable
 fun SocietyListItem(society: Society, navController: NavController){
-//    var cardId = DataProvider.society
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
@@ -47,7 +47,14 @@ fun SocietyListItem(society: Society, navController: NavController){
             // <------- Testing ------->
 //            Modifier.clickable(onClick = { Log.d("Button", "${society.title} is Clicked")})
 
-            Modifier.clickable( onClick = {navController.navigate(SocietyScreens.SocietyView.route)}),
+            Modifier.clickable{
+                val societyDetails = Society(title = "${society.title}", about = "${society.about}", description = "${society.description}", id = society.id, societyImageId = society.id)
+                navController.currentBackStackEntry?.savedStateHandle?.set(
+                    key = "societyDetails",
+                    value = societyDetails
+                )
+                navController.navigate(SocietyScreens.SocietyView.route)
+                              },
         ) {
             SocietyImage(society = society)
             Column(
@@ -62,6 +69,8 @@ fun SocietyListItem(society: Society, navController: NavController){
         }
     }
 }
+
+
 @Composable
 private fun SocietyImage(society: Society){
     Image(
