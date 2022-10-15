@@ -13,18 +13,19 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
+import java.lang.reflect.Modifier
 
 @Composable
-fun societyContent(){
-    val navController = rememberNavController()
+fun societyContent( navController:NavController){
+    //val navController = rememberNavController()
     val societies = remember { DataProvider.societylist}
     LazyColumn(
-        contentPadding = PaddingValues(horizontal = 12.dp , vertical = 4.dp)
+        contentPadding = PaddingValues(horizontal = 12.dp , vertical = 4.dp),
     ){
         items(
             items = societies,
             itemContent = {
-                Societylistitem(
+                SocietyListItem(
                     society = it, navController = navController,
                 )
             }

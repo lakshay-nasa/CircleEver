@@ -16,23 +16,33 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.zIndex
+import com.example.circleever.ui.theme.OldLace
 import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
 import com.example.circleever.ui.theme.maryKate
 
-class SocietyProfile {
-    @Preview
+class SocietyProfile(
+
+    val sName: String,
+    val sAbout: String,
+
+
+
+) {
     @Composable
     fun Society_View(){
         SocietyName(modifier = Modifier)
         Column(modifier = Modifier
-            .fillMaxSize()
-            .padding(top = 0.dp, bottom = 30.dp), verticalArrangement = Arrangement.Center,) {
+            .fillMaxSize().background(color = OldLace)
+            .padding(top = 0.dp, bottom = 30.dp), verticalArrangement = Arrangement.Top,) {
             AboutPanel(modifier= Modifier)
         }
         Discussions(modifier = Modifier)
@@ -44,24 +54,28 @@ class SocietyProfile {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(1.dp),
+                .zIndex(1f),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Card(modifier = Modifier
-                .padding(0.dp)
-                .clip(RectangleShape),
+                .fillMaxWidth(0.8f)
+//                .fillMaxHeight(0.08f)
+                .clip(RectangleShape)
+                .weight(1f, fill = false),
                 backgroundColor = Warmyellow
             )
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "Society_Name",
-                    textAlign = TextAlign.Start,
+                    text = "$sName",
+                    textAlign = TextAlign.Center,
                     color = SeaGreen,
-                    fontSize = 50.sp,
+                    fontSize = 35.sp,
                     fontFamily = maryKate,
                     fontWeight = FontWeight.Thin,
+                    maxLines = 2,
+                    overflow = TextOverflow.Clip
                 )
             }
         }
@@ -73,41 +87,40 @@ class SocietyProfile {
 
 
     @Composable
-    fun AboutPanel(modifier: Modifier = Modifier) {
+    fun AboutPanel(modifier: Modifier) {
         Column(
             modifier = modifier
-                .padding(5.dp)
-                .clip(RoundedCornerShape(10.dp))
-                .fillMaxHeight(0.8f)
+                .clip(RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp))
+                .fillMaxHeight(0.9f)
                 .background(color = SeaGreen),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Card(modifier = Modifier
-                .padding(5.dp)
-                .clip(CircleShape)) {
+            Box(modifier = Modifier
+                .padding(5.dp, top = 100.dp, bottom = 20.dp)
+                .clip(CircleShape)
+            ) {
                 Image(
                     painter = painterResource(
                         id = R.drawable.jzaa
                     ),
                     contentDescription = "Society View",
-                    Modifier.size(300.dp)
+                    Modifier.size(280.dp)
                 )
             }
 
             Box(modifier = Modifier){
                 Column(modifier
-                    .padding(start = 15.dp, end = 15.dp, top = 10.dp, bottom = 10.dp)
+                    .padding(start = 15.dp, end = 15.dp, top = 0.dp, bottom = 10.dp)
                 ) {
-                    Card(modifier = Modifier
-                        .padding()
-                        .clip(RoundedCornerShape(2.dp))) {
+                    Card(modifier = Modifier.clip(RoundedCornerShape(topEndPercent = 4, topStartPercent = 4, bottomStartPercent = 10, bottomEndPercent = 10)),
+                        backgroundColor = OldLace
+                        ) {
                         Text(
                             text = "About Us",
                             textAlign = TextAlign.Start,
                             fontSize = 22.sp,
                             modifier = Modifier.padding(start = 10.dp)
-
                         )
 
                         val scroll = rememberScrollState(0)
@@ -155,7 +168,7 @@ class SocietyProfile {
                 colors = ButtonDefaults.buttonColors(backgroundColor = Warmyellow)
             ) {
                 Text(
-                    text = "Discussions",
+                    text = "Contact Us",
                     fontSize = 22.sp,
                     fontFamily = maryKate,
                 )

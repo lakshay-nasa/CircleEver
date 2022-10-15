@@ -1,5 +1,7 @@
 package com.example.circleever
 
+import android.icu.text.CaseMap.Title
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -14,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -24,8 +27,14 @@ import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
 
+
 @Composable
-fun Societylistitem(society: Society, navController: NavController){
+fun societyClicked(){
+}
+
+
+@Composable
+fun SocietyListItem(society: Society, navController: NavController){
     Card(
         modifier = Modifier
             .padding(horizontal = 8.dp, vertical = 8.dp)
@@ -35,7 +44,17 @@ fun Societylistitem(society: Society, navController: NavController){
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     ) {
         Row(
-            Modifier.clickable{navController.navigate(SocietyScreens.SocietyView.route)}
+            // <------- Testing ------->
+//            Modifier.clickable(onClick = { Log.d("Button", "${society.title} is Clicked")})
+
+            Modifier.clickable{
+                val societyDetails = Society(title = "${society.title}", about = "${society.about}", description = "${society.description}", id = society.id, societyImageId = society.id)
+                navController.currentBackStackEntry?.savedStateHandle?.set(
+                    key = "societyDetails",
+                    value = societyDetails
+                )
+                navController.navigate(SocietyScreens.SocietyView.route)
+                              },
         ) {
             SocietyImage(society = society)
             Column(
@@ -50,6 +69,8 @@ fun Societylistitem(society: Society, navController: NavController){
         }
     }
 }
+
+
 @Composable
 private fun SocietyImage(society: Society){
     Image(

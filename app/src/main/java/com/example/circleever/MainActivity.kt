@@ -21,8 +21,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 fun MyApp(){
     Navigation()
-
 }
+
+//@Preview
+//@Composable
+//fun MyApp(){
+////    val obj1 = SocietyProfile("Natural Punjabi Dance Group", "ab")
+//    val obj1 = SocietyProfile("Natural Punjabi Dance Group", "ab")
+//    obj1.Society_View()
+//}
