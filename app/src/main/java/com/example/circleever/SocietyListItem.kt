@@ -33,7 +33,7 @@ fun societyClicked(){
 
 
 @Composable
-fun Societylistitem(society: Society, navController: NavController){
+fun SocietyListItem(society: Society, navController: NavController){
 //    var cardId = DataProvider.society
     Card(
         modifier = Modifier

@@ -37,7 +37,7 @@ fun Navigation() {
         composable(
             route = SocietyScreens.SocietyView.route,
         ){
-            SocietyView()
+            SocietyView(navController)
         }
     }
 }
@@ -67,7 +67,7 @@ fun Navigation() {
 fun SocietyList(navController: NavController){
     Scaffold(
         content = {
-            societyContent()
+            societyContent(navController)
         }
     )
 }
@@ -78,7 +78,7 @@ fun SocietyList(navController: NavController){
 // --> App doesn't navigate to below function when society is clicked.
 
 @Composable
-fun SocietyView(){
+fun SocietyView(navController: NavController){
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
