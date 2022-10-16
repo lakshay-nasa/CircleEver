@@ -109,7 +109,7 @@ class SocietyContact(
                     Text(
                         text = "Contact Us",
                         fontSize = 20.sp,
-                        modifier = Modifier.padding(top = 20.dp),
+                        modifier = Modifier.padding(top = 20.dp, start = 10.dp),
                         color = Color(0xFFFCB144)
                     )
 
@@ -184,7 +184,7 @@ class SocietyContact(
                     Text(
                         text = "Follow Us",
                         fontSize = 20.sp,
-                        modifier = Modifier.padding(top = 80.dp),
+                        modifier = Modifier.padding(top = 80.dp, start = 10.dp),
                         color = Color(0xFFFCB144)
 
                     )

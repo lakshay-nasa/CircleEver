@@ -108,7 +108,8 @@ class SocietyProfile(
             ) {
                 Image(
                     painter = painterResource(
-                        id = imageId.toInt()
+//                        id = imageId.toInt()
+                    id = R.drawable.sampleicon
                     ),
                     contentDescription = "Society View",
                     Modifier.size(280.dp)
