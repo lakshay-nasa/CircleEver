@@ -4,90 +4,187 @@ import com.example.circleever.R
 
 object DataProvider {
 
-    val society =
-        Society(
-            id = 1,
-            title = "Royal punjab group",
-            description = "Bhangra society of DCRUST.",
-            societyImageId = R.drawable.rpg
-        )
+//    val society =
+//        Society(
+//            id = 1,
+//            title = "Royal punjab group",
+//            description = "Bhangra society of DCRUST.",
+//            societyImageId = R.drawable.rpg
+//        )
 
 
 
     val societylist = listOf(
-            society,
+        Society(
+            id = 1,
+            title = "ROYAL PUNJAB GROUP",
+            description = "Bhangra society of DCRUST.",
+            societyImageId = R.drawable.rpg,
+            about = "Royal punjab group (RPG), 9 Times Rhythm Winner...",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
+        ),
+
         Society(
             id = 2,
             title = "Goonj",
             description = "Music/Singing society of DCRUST.",
-            societyImageId = R.drawable.goong
+            societyImageId = R.drawable.goong,
+            about = "Goonj - Feel Your Soul",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 3,
             title = "Jzaa",
             description = "Dramatics society of DCRUST.",
-            societyImageId = R.drawable.jzaa
+            societyImageId = R.drawable.jzaa,
+            about = "Jzaa - Oldest Dramatic Society Of Dcrust.",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 4,
             title = "Natural Punjabi dance Group",
             description = "Bhangra society of DCRUST.",
-            societyImageId = R.drawable.npg
+            societyImageId = R.drawable.npg,
+            about = "Natural Punjabi dance Group (NPG) -- || Nirbau-Nirvair ||",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 5,
-            title = "Pratibimb",
+            title = "PRATIBIMB",
             description = "Cultural society of DCRUST.",
-            societyImageId = R.drawable.pratibimb
+            societyImageId = R.drawable.pratibimb,
+            about = "PRATIBIMB - Everything you do is reflection of you.",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 6,
-            title = "Sunshine",
+            title = "SUNSHINE",
             description = "Cultural society society of DCRUST.",
-            societyImageId = R.drawable.sunshine
+            societyImageId = R.drawable.sunshine,
+            about = "SUNSHINE...",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 7,
             title = "Step-Stromzz",
             description = "Western dance society society of DCRUST.",
-            societyImageId = R.drawable.step
+            societyImageId = R.drawable.step,
+            about = "Step-Stromzz.....",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 8,
             title = "Swag",
             description = "Cultural society society of DCRUST.",
-            societyImageId = R.drawable.swag
+            societyImageId = R.drawable.swag,
+            about = "Swag...",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 9,
             title = "Savera",
             description = "society of DCRUST.",
-            societyImageId = R.drawable.savera
+            societyImageId = R.drawable.savera,
+            about = "Savera...",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 10,
             title = "Thinkbots",
             description = "Robotics society society of DCRUST.",
-            societyImageId = R.drawable.think
+            societyImageId = R.drawable.think,
+            about = "Thinkbots..",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
 
         Society(
             id = 11,
-            title = "Ska",
+            title = "SKA",
             description = "Dramatics society society of DCRUST.",
-            societyImageId = R.drawable.ska
+            societyImageId = R.drawable.ska,
+            about = "SKA - Dramatics society society of DCRUST.",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 12,
-            title = "Rebels",
+            title = "REBELS",
             description = "western dance society society of DCRUST.",
-            societyImageId = R.drawable.rebels
+            societyImageId = R.drawable.rebels,
+            about = "REBELS - western dance society society of DCRUST.",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         ),
         Society(
             id = 13,
             title = "Animals & birds welfare society",
             description = "Cultural society society of DCRUST.",
-            societyImageId = R.drawable.wel
+            societyImageId = R.drawable.wel,
+            about = "Animals & birds welfare society - Cultural society society of DCRUST.",
+            facilitator1 = "F1",
+            facilitator2 = "F2",
+            contact1 = "+91-XXXXXXXX",
+            contact2 = "Link",
+            InstagramLink = "Link",
+            LinkedInLink = "Link",
         )
 
 
