@@ -54,9 +54,13 @@ fun SocietyListItem(society: Society, navController: NavController){
                     description = "${society.description}",
                     id = society.id,
                     societyImageId = society.id,
-                    facilitators = arrayOf("${society.facilitators}"),
-                    contact = arrayOf("${society.contact}"),
-                    societySocialLinks = arrayOf("${society.societySocialLinks}"))
+                    facilitator1 = "${society.facilitator1}",
+                    facilitator2 = "${society.facilitator2}",
+                    contact1 = "${society.contact1}",
+                    contact2 = "${society.contact2}",
+                    InstagramLink = "${society.InstagramLink}",
+                    LinkedInLink = "${society.LinkedInLink}"
+                    )
 
                 navController.currentBackStackEntry?.savedStateHandle?.set(
                     key = "societyDetails",

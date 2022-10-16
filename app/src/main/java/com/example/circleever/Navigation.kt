@@ -45,7 +45,11 @@ fun Navigation() {
         ){
             val result =
                 navController.previousBackStackEntry?.savedStateHandle?.get<Society>("societyDetails")
-            ContactView()
+
+//                        Log.d("SocietyView", "${result?.facilitators}")
+
+//            ContactView("${result?.title}", arrayOf(result?.facilitators), result.contact, result.societySocialLinks)
+            ContactView("${result?.title}", "${result?.facilitator1}", "${result?.facilitator2}", "${result?.contact1}", "${result?.contact2}", "${result?.InstagramLink}", "${result?.LinkedInLink}")
         }
     }
 }
@@ -96,9 +100,9 @@ fun SocietyView(title: String, about: String, navController:NavController){
 
 
 @Composable
-fun ContactView(){
+fun ContactView(title: String, facilitator1: String, facilitator2: String, contact1: String, contact2: String, instagramLink: String, linkedInLink: String){
 //    val CVobj = SocietyContact("${facilitators}", "${contact}", "${links}")
-    val CVobj = SocietyContact()
+    val CVobj = SocietyContact("${title}", facilitator1, facilitator2, contact1, contact2, instagramLink, linkedInLink)
     CVobj.ContactUs()
 }
 

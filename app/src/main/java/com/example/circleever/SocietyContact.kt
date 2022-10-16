@@ -24,14 +24,18 @@ import com.example.circleever.ui.theme.maryKate
 
 class SocietyContact(
 
-//    val facilitators: String,
-//    val contact: String,
-//    val links: String,
+    val sName: String,
+    val facilitator1: String,
+    val facilitator2: String,
+    val contact1: String,
+    val contact2: String,
+    val instagramLink: String,
+    val linkedInLink: String,
 
 
 
     ) {
-    @Preview(showSystemUi = true, showBackground = true)
+//    @Preview(showSystemUi = true, showBackground = true)
     @Composable
     fun ContactUs() {
         SocietyName(modifier = Modifier)
@@ -66,7 +70,7 @@ class SocietyContact(
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "Society_Name",
+                    text = "$sName",
                     textAlign = TextAlign.Center,
                     color = SeaGreen,
                     fontSize = 35.sp,
@@ -140,13 +144,13 @@ class SocietyContact(
 
                     ) {
                         Text(
-                            text = "C1",
+                            text = "$facilitator1",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
 
                             )
                         Text(
-                            text = "+91XXXXXXXX",
+                            text = "$contact1",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
 
@@ -163,13 +167,13 @@ class SocietyContact(
 
                     ) {
                         Text(
-                            text = "C2",
+                            text = "$facilitator2",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
 
                             )
                         Text(
-                            text = "Link:XXXXXXX",
+                            text = "$contact2",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
 
@@ -201,7 +205,7 @@ class SocietyContact(
 
                             )
                         Text(
-                            text = "Link:XXXXXXX",
+                            text = "$instagramLink",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
 
@@ -225,7 +229,7 @@ class SocietyContact(
 
                             )
                         Text(
-                            text = "Link:XXXXXXX",
+                            text = "$linkedInLink",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
                         )

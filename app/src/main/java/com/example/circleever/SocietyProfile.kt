@@ -166,7 +166,12 @@ class SocietyProfile(
         ) {
             OutlinedButton(
 //                onClick = { Log.d("Button", "Opening Contact") },
-                onClick = {navController.navigate(SocietyScreens.ContactView.route)},
+                onClick = {
+
+                    navController.popBackStack()   // This will save the data for now while navigation.
+
+                    navController.navigate(SocietyScreens.ContactView.route)
+                          },
                 shape = RoundedCornerShape(20),
                 modifier = Modifier.padding(20.dp),
                 contentPadding = PaddingValues(15.dp),
