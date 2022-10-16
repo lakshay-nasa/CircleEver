@@ -37,7 +37,7 @@ class SocietyProfile(
 
     val sName: String,
     val sAbout: String,
-    val imageId: String,
+    val imageId: Int,
 
 
 
@@ -108,7 +108,8 @@ class SocietyProfile(
             ) {
                 Image(
                     painter = painterResource(
-                        id = imageId.toInt()
+                        id = imageId
+//                        id = R.drawable.sampleicon
                     ),
                     contentDescription = "Society View",
                     Modifier.size(280.dp)

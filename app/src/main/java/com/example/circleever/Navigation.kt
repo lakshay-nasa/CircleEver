@@ -35,10 +35,10 @@ fun Navigation() {
 //            <------- Testing ------->
 //            Log.d("SocietyView", "${result?.title}")
 //            Log.d("SocietyView", "${result?.about}")
-            Log.d("SocietyView", "${result?.societyImageId} clicked")
-            Log.d("SocietyView", "${result?.id} clicked")
+//            Log.d("SocietyView", "${result?.societyImageId} clicked")
+//            Log.d("SocietyView", "${result?.id} clicked")
 
-            SocietyView("${result?.title}", "${result?.about}", "${result?.societyImageId}" ,navController)
+            SocietyView("${result?.title}", "${result?.about}", result!!.id ,navController)
         }
 
 
@@ -57,27 +57,6 @@ fun Navigation() {
 }
 
 
-// <------- Testing -------> Note -> Comment below "SocietyList" before uncommenting it.
-
-//@Composable
-//fun SocietyList(navController: NavController){
-//Column(
-//    verticalArrangement = Arrangement.Center,
-//    modifier = Modifier
-//        .fillMaxWidth()
-//        .padding(horizontal = 50.dp)
-//) {
-//    Button(
-//        onClick = {
-//            navController.navigate(SocietyScreens.SocietyView.route)
-//        },
-//    ) {
-//        Text(text = "To NavigateScreen")
-//    }
-//}
-//}
-
-
 @Composable
 fun SocietyList(navController: NavController){
     Scaffold(
@@ -90,11 +69,32 @@ fun SocietyList(navController: NavController){
 
 
 @Composable
-fun SocietyView(title: String, about: String, imageId: String, navController:NavController){
+fun SocietyView(title: String, about: String, Id: Int, navController:NavController){
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ){
+        var imageId = R.drawable.sampleicon
+        var id = Id
+        when (id){
+            1 -> imageId = R.drawable.rpg
+            2 -> imageId = R.drawable.goong
+            3 -> imageId = R.drawable.goong
+            4 -> imageId = R.drawable.npg
+            5 -> imageId = R.drawable.pratibimb
+            6 -> imageId = R.drawable.sunshine
+            7 -> imageId = R.drawable.step
+            8 -> imageId = R.drawable.swag
+            9 -> imageId = R.drawable.savera
+            10 -> imageId = R.drawable.think
+            11 -> imageId = R.drawable.ska
+            12 -> imageId = R.drawable.rebels
+            13 -> imageId = R.drawable.wel
+            else -> {
+                R.drawable.sampleicon
+            }
+        }
+
         val SVobj = SocietyProfile( "${title}", "${about}", imageId)
         SVobj.Society_View(navController)
     }
@@ -103,21 +103,10 @@ fun SocietyView(title: String, about: String, imageId: String, navController:Nav
 
 @Composable
 fun ContactView(title: String, facilitator1: String, facilitator2: String, contact1: String, contact2: String, instagramLink: String, linkedInLink: String){
-//    val CVobj = SocietyContact("${facilitators}", "${contact}", "${links}")
     val CVobj = SocietyContact("${title}", facilitator1, facilitator2, contact1, contact2, instagramLink, linkedInLink)
     CVobj.ContactUs()
 }
 
 
-//@Preview
-//@Composable
-//fun ContactView(){
-//    Box(
-//        contentAlignment = Alignment.Center,
-//        modifier = Modifier.fillMaxSize()
-//    ){
-//        Text(text = "ContactWindow")
-//    }
-//}
 
 
