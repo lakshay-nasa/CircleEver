@@ -8,7 +8,7 @@ data class Society(
     val id : Int,
     val title : String,
     val description : String,
-    val societyImageId : Int = 0,
+    val societyImageId : Int,
     val about : String,
     val facilitator1: String,
     val facilitator2: String,

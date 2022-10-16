@@ -35,8 +35,10 @@ fun Navigation() {
 //            <------- Testing ------->
 //            Log.d("SocietyView", "${result?.title}")
 //            Log.d("SocietyView", "${result?.about}")
+            Log.d("SocietyView", "${result?.societyImageId} clicked")
+            Log.d("SocietyView", "${result?.id} clicked")
 
-            SocietyView("${result?.title}", "${result?.about}", navController)
+            SocietyView("${result?.title}", "${result?.about}", "${result?.societyImageId}" ,navController)
         }
 
 
@@ -88,12 +90,12 @@ fun SocietyList(navController: NavController){
 
 
 @Composable
-fun SocietyView(title: String, about: String, navController:NavController){
+fun SocietyView(title: String, about: String, imageId: String, navController:NavController){
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ){
-        val SVobj = SocietyProfile( "${title}", "${about}")
+        val SVobj = SocietyProfile( "${title}", "${about}", imageId)
         SVobj.Society_View(navController)
     }
 }

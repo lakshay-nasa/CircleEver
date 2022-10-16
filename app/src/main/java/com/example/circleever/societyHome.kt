@@ -1,6 +1,5 @@
 package com.example.circleever
 
-import android.security.identity.AccessControlProfile
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -8,12 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.example.circleever.data.DataProvider
-import com.example.circleever.data.Society
-import java.lang.reflect.Modifier
+
 
 @Composable
 fun societyContent(navController:NavController){
