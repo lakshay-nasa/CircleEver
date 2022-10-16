@@ -22,17 +22,25 @@ import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
 import com.example.circleever.ui.theme.maryKate
 
-class SocietyContact {
+class SocietyContact(
+
+//    val facilitators: String,
+//    val contact: String,
+//    val links: String,
+
+
+
+    ) {
     @Preview(showSystemUi = true, showBackground = true)
     @Composable
-    fun Contact_Us() {
+    fun ContactUs() {
         SocietyName(modifier = Modifier)
         Column(
             modifier = Modifier
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Bottom,
         ) {
-            ContactUs(modifier = Modifier)
+            ContactWindow(modifier = Modifier)
         }
 //        Links(modifier = Modifier)
     }
@@ -74,7 +82,7 @@ class SocietyContact {
 
 
     @Composable
-    fun ContactUs(modifier: Modifier) {
+    fun ContactWindow(modifier: Modifier) {
         Column(
             modifier = Modifier
                 .padding(top = 50.dp),

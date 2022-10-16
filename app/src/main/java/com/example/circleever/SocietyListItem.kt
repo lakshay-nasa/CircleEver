@@ -48,7 +48,16 @@ fun SocietyListItem(society: Society, navController: NavController){
 //            Modifier.clickable(onClick = { Log.d("Button", "${society.title} is Clicked")})
 
             Modifier.clickable{
-                val societyDetails = Society(title = "${society.title}", about = "${society.about}", description = "${society.description}", id = society.id, societyImageId = society.id)
+                val societyDetails = Society(
+                    title = "${society.title}",
+                    about = "${society.about}",
+                    description = "${society.description}",
+                    id = society.id,
+                    societyImageId = society.id,
+                    facilitators = arrayOf("${society.facilitators}"),
+                    contact = arrayOf("${society.contact}"),
+                    societySocialLinks = arrayOf("${society.societySocialLinks}"))
+
                 navController.currentBackStackEntry?.savedStateHandle?.set(
                     key = "societyDetails",
                     value = societyDetails

@@ -10,6 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import com.example.circleever.data.Society
 
@@ -18,7 +20,9 @@ fun Navigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = SocietyScreens.SocietyList.route)
     {
-        composable(route = SocietyScreens.SocietyList.route){
+        composable(
+            route = SocietyScreens.SocietyList.route
+        ){
             SocietyList(navController = navController)
         }
 
@@ -27,9 +31,21 @@ fun Navigation() {
         ){
             val result =
                 navController.previousBackStackEntry?.savedStateHandle?.get<Society>("societyDetails")
-            Log.d("SocietyView", "${result?.title}")
-            Log.d("SocietyView", "${result?.about}")
-            SocietyView("${result?.title}", "${result?.title}")
+
+//            <------- Testing ------->
+//            Log.d("SocietyView", "${result?.title}")
+//            Log.d("SocietyView", "${result?.about}")
+
+            SocietyView("${result?.title}", "${result?.about}", navController)
+        }
+
+
+        composable(
+            route = SocietyScreens.ContactView.route,
+        ){
+            val result =
+                navController.previousBackStackEntry?.savedStateHandle?.get<Society>("societyDetails")
+            ContactView()
         }
     }
 }
@@ -68,12 +84,34 @@ fun SocietyList(navController: NavController){
 
 
 @Composable
-fun SocietyView(title: String, about: String){
+fun SocietyView(title: String, about: String, navController:NavController){
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ){
-        val obj1 = SocietyProfile( "${title}", "${about}")
-        obj1.Society_View()
+        val SVobj = SocietyProfile( "${title}", "${about}")
+        SVobj.Society_View(navController)
     }
 }
+
+
+@Composable
+fun ContactView(){
+//    val CVobj = SocietyContact("${facilitators}", "${contact}", "${links}")
+    val CVobj = SocietyContact()
+    CVobj.ContactUs()
+}
+
+
+//@Preview
+//@Composable
+//fun ContactView(){
+//    Box(
+//        contentAlignment = Alignment.Center,
+//        modifier = Modifier.fillMaxSize()
+//    ){
+//        Text(text = "ContactWindow")
+//    }
+//}
+
+

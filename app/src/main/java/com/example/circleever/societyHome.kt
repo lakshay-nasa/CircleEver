@@ -16,7 +16,7 @@ import com.example.circleever.data.Society
 import java.lang.reflect.Modifier
 
 @Composable
-fun societyContent( navController:NavController){
+fun societyContent(navController:NavController){
     //val navController = rememberNavController()
     val societies = remember { DataProvider.societylist}
     LazyColumn(

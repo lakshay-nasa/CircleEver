@@ -1,5 +1,6 @@
 package com.example.circleever
 
+import android.content.Context
 import android.util.Log
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -24,6 +25,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.circleever.data.Society
 import com.example.circleever.ui.theme.OldLace
 import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
@@ -38,14 +42,14 @@ class SocietyProfile(
 
 ) {
     @Composable
-    fun Society_View(){
+    fun Society_View(navController: NavController){
         SocietyName(modifier = Modifier)
         Column(modifier = Modifier
             .fillMaxSize().background(color = OldLace)
             .padding(top = 0.dp, bottom = 30.dp), verticalArrangement = Arrangement.Top,) {
             AboutPanel(modifier= Modifier)
         }
-        Discussions(modifier = Modifier)
+        SocietyContactBtn(navController)
     }
 
 
@@ -91,6 +95,7 @@ class SocietyProfile(
         Column(
             modifier = modifier
                 .clip(RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp))
+                .fillMaxWidth()
                 .fillMaxHeight(0.9f)
                 .background(color = SeaGreen),
             verticalArrangement = Arrangement.Center,
@@ -125,10 +130,10 @@ class SocietyProfile(
 
                         val scroll = rememberScrollState(0)
                         Box(modifier = Modifier
+                            .fillMaxWidth()
                             .padding(10.dp, top = 30.dp)) {
                             Text(
-                                text = "Jzaa - Oldest Dramatic Society Of Dcrust. " +
-                                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sed tenetur quae vitae architecto expedita tempora at est unde. Incidunt rerum dolor, quis architecto unde totam numquam delectus aut dolorum? Adipisci amet iure, libero maiores inventore quas fugit itaque officiis nesciunt sint omnis vitae excepturi fugiat. Dolorem suscipit in magni minima alias libero ut numquam deleniti consequatur! Veniam, esse. Laboriosam, quas ipsum earum ab, cumque dolorem delectus nemo fuga voluptatibus vel ex laborum quia molestias quasi obcaecati similique et id nesciunt animi, ducimus saepe facilis voluptates? Esse reiciendis tempora et officiis fuga expedita neque eos a deleniti, error laborum eveniet ullam commodi. Maiores, dignissimos quidem! Doloremque eaque expedita, ratione ipsa fugit recusandae excepturi neque dignissimos perferendis pariatur omnis aspernatur praesentium nemo officiis? Nesciunt, dolores. Consequuntur quisquam voluptatum debitis voluptate distinctio libero qui voluptas molestias. Voluptatibus et accusamus nam doloribus minus qui, officiis error voluptates, veniam delectus ipsum quasi eveniet placeat quis natus ducimus harum nostrum temporibus, in quas ab cum! Ducimus voluptatum reprehenderit aspernatur accusantium saepe soluta debitis molestiae ipsum? Voluptas dolorum ut incidunt nesciunt facilis, officia veritatis rerum id natus dicta odio nisi fugiat! Dolore quod asperiores, dolorem excepturi voluptatum deserunt, nihil quam recusandae molestiae rerum illo minima animi? A, rerum ab molestiae quasi necessitatibus aliquam? Facere fugit rerum voluptas similique aliquid velit, aspernatur repudiandae necessitatibus non consectetur, ratione dicta vitae obcaecati at molestiae. Facere, nobis accusantium! Iure quaerat aspernatur officiis eius, autem necessitatibus laborum dignissimos molestiae dicta, a consectetur, sit eos hic.",
+                                text = "${sAbout}",
                                 textAlign = TextAlign.Start,
                                 fontSize = 15.sp,
                                 modifier = Modifier
@@ -149,7 +154,7 @@ class SocietyProfile(
 
 
     @Composable
-    fun Discussions(modifier: Modifier) {
+    fun SocietyContactBtn(navController: NavController) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -160,7 +165,8 @@ class SocietyProfile(
 
         ) {
             OutlinedButton(
-                onClick = { Log.d("Button", "Opening Discussions") },
+//                onClick = { Log.d("Button", "Opening Contact") },
+                onClick = {navController.navigate(SocietyScreens.ContactView.route)},
                 shape = RoundedCornerShape(20),
                 modifier = Modifier.padding(20.dp),
                 contentPadding = PaddingValues(15.dp),
