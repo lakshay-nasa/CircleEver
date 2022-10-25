@@ -20,8 +20,9 @@ import androidx.compose.ui.unit.sp
 import com.example.circleever.ui.theme.OldLace
 import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
+import com.example.circleever.ui.theme.maryKate
 
-class SocietyHelp {
+class HelpSection {
     @Preview(showSystemUi = true, showBackground = true)
     @Composable
     fun Help() {

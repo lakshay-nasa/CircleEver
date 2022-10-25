@@ -1,20 +1,17 @@
 package com.example.circleever
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.circleever.data.Society
 import com.example.circleever.ui.theme.CircleEverTheme
 import com.example.circleever.ui.theme.SeaGreen
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +30,28 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Preview
 @Composable
 fun MyApp(){
-    Navigation()
+    MainBottomBar()
+}
+
+
+
+@Composable
+fun societyNavigation(){
+    SocietyNavigation()
+}
+
+@Preview
+@Composable
+fun noticeBoard(){
+    Text(text = "Hello")
+}
+
+@Composable
+fun helpSection(){
+    val obj1 = HelpSection()
+    obj1.Help()
 }
 
 

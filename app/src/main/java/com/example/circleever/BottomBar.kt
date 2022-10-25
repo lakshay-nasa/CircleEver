@@ -15,13 +15,15 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun MainBottomBar(){
     val navController = rememberNavController()
-    Scaffold {
-
+    Scaffold(
+        bottomBar = { BottomBar(navController = navController) }
+    ) {
+        BottomBarNavigation(navController = navController)
     }
 }
 
 @Composable
-fun BottomBar(navController: NavController) {
+fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.Societies,
         BottomBarScreen.NoticeBoard,
@@ -46,8 +48,7 @@ fun BottomBar(navController: NavController) {
 fun RowScope.AddItem(
     screen: BottomBarScreen,
     currentDestination: NavDestination?,
-//    navController: NavHostController,
-    navController: NavController
+    navController: NavHostController
 ){
     BottomNavigationItem(
         label = {

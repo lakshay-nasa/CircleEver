@@ -12,15 +12,15 @@ fun BottomBarNavigation(navController: NavHostController){
     startDestination = BottomBarScreen.Societies.route
         ){
         composable(route = BottomBarScreen.Societies.route){
-            // Societies Screen Goes Here
+            societyNavigation()
         }
 
-        composable(route = BottomBarScreen.Societies.route){
-            // Notice Board Goes here
+        composable(route = BottomBarScreen.NoticeBoard.route){
+            noticeBoard()
         }
 
-        composable(route = BottomBarScreen.Societies.route){
-            // Help Section Goes here
+        composable(route = BottomBarScreen.Help.route){
+            helpSection()
         }
     }
 }
