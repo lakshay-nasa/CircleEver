@@ -1,5 +1,6 @@
 package com.example.circleever
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -11,6 +12,11 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.circleever.ui.theme.SeaGreen
+import com.example.circleever.ui.theme.maryKate
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.circleever.ui.theme.OldLace
 
 @Composable
 fun MainBottomBar(){
@@ -32,7 +38,10 @@ fun BottomBar(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = navBackStackEntry?.destination
 
-    BottomNavigation {
+    BottomNavigation(
+        modifier = Modifier,
+        backgroundColor = SeaGreen,
+    ) {
         screens.forEach { screen ->
             AddItem(
                 screen = screen,
@@ -51,8 +60,12 @@ fun RowScope.AddItem(
     navController: NavHostController
 ){
     BottomNavigationItem(
+        selectedContentColor = OldLace,
         label = {
-            Text(text = screen.title)
+            Text(
+                text = screen.title,
+                fontFamily = maryKate,
+                )
         },
         icon = {
             Icon(

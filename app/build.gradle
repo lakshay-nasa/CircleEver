@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -67,4 +68,12 @@ dependencies {
     def nav_version = "2.5.2"
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
+
+
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:31.0.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
+    implementation 'com.google.firebase:firebase-database-ktx'
+
 }

@@ -5,13 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.circleever.ui.theme.CircleEverTheme
 import com.example.circleever.ui.theme.SeaGreen
 import androidx.compose.ui.Modifier
+import com.example.circleever.ui.theme.OldLace
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +23,6 @@ class MainActivity : ComponentActivity() {
             CircleEverTheme {
                 Box(
                     modifier = Modifier
-                        .fillMaxSize()
-                        .background(color = SeaGreen)
                 ){
                     MyApp()
                 }
@@ -39,7 +40,9 @@ fun MyApp(){
 
 @Composable
 fun societyNavigation(){
-    SocietyNavigation()
+    Box(modifier = Modifier.fillMaxHeight(0.935f)) {
+        SocietyNavigation()
+    }
 }
 
 @Preview
@@ -50,18 +53,6 @@ fun noticeBoard(){
 
 @Composable
 fun helpSection(){
-    val obj1 = HelpSection()
-    obj1.Help()
+        val obj1 = HelpSection()
+        obj1.Help()
 }
-
-
-
-
-
-//@Preview
-//@Composable
-//fun MyApp(){
-////    val obj1 = SocietyProfile("Natural Punjabi Dance Group", "ab")
-//    val obj1 = SocietyProfile("Natural Punjabi Dance Group", "ab")
-//    obj1.Society_View()
-//}
