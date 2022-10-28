@@ -48,7 +48,9 @@ fun societyNavigation(){
 @Preview
 @Composable
 fun noticeBoard(){
-    Text(text = "Hello")
+    Box(modifier = Modifier.fillMaxHeight(0.935f)) {
+        NoticeBoard()
+    }
 }
 
 @Composable
