@@ -13,14 +13,20 @@ import androidx.compose.material.Scaffold
 import com.example.circleever.data.Society
 
 @Composable
-fun SocietyNavigation() {
+fun Navigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = SocietyScreens.SocietyList.route)
+    NavHost(navController = navController, startDestination = SocietyScreens.screenSplash.route)
     {
         composable(
             route = SocietyScreens.SocietyList.route
         ){
             SocietyList(navController = navController)
+        }
+
+        composable(
+            SocietyScreens.screenSplash.route,
+        ){
+            ScreenSplash(navController = navController)
         }
 
         composable(
@@ -37,6 +43,7 @@ fun SocietyNavigation() {
 
             SocietyView("${result?.title}", "${result?.about}", "${result?.societyImageId}" ,navController)
         }
+
 
 
         composable(
@@ -114,7 +121,5 @@ fun ContactView(title: String, facilitator1: String, facilitator2: String, conta
 //        modifier = Modifier.fillMaxSize()
 //    ){
 //        Text(text = "ContactWindow")
-//    }
+//    }
 //}
-
-
