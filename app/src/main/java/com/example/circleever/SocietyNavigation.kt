@@ -10,13 +10,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
 import com.example.circleever.data.Society
 
 @Composable
-fun Navigation() {
+fun SocietyNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = SocietyScreens.SocietyList.route)
     {
