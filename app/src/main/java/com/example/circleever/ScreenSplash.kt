@@ -38,7 +38,7 @@ fun ScreenSplash(navController: NavHostController) {
                     OvershootInterpolator(4f).getInterpolation(it)
                 })
         )
-        delay(3000L)
+        delay(1000L)
         navController.navigate(SocietyScreens.SocietyList.route){
             popUpTo(0)
         }
