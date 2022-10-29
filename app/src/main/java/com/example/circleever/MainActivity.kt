@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CircleEverTheme {
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.background(color = SeaGreen)
                 ){
                     MyApp()
                 }
