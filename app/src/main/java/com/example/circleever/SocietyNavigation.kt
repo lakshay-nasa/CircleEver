@@ -13,7 +13,7 @@ import androidx.compose.material.Scaffold
 import com.example.circleever.data.Society
 
 @Composable
-fun Navigation() {
+fun SocietyNavigation() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = SocietyScreens.screenSplash.route)
     {
