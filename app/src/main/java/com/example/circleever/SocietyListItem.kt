@@ -39,7 +39,7 @@ fun SocietyListItem(society: Society, navController: NavController) {
 
     Box(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize(1f)
             .background(color = SeaGreen)
     ) {
 
