@@ -39,7 +39,7 @@ fun ScreenSplash(navController: NavHostController) {
                 })
         )
         delay(1000L)
-        navController.navigate(SocietyScreens.SocietyList.route){
+        navController.navigate(MainScreen.BottomBar.route){
             popUpTo(0)
         }
     }

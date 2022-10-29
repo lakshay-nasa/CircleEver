@@ -14,6 +14,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.circleever.ui.theme.CircleEverTheme
 import com.example.circleever.ui.theme.SeaGreen
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.circleever.ui.theme.OldLace
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CircleEverTheme {
                 Box(
-                    modifier = Modifier
+                    modifier = Modifier.background(color = SeaGreen)
                 ){
                     MyApp()
                 }
@@ -33,10 +36,15 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyApp(){
-    MainBottomBar()
+    MainScreen()
 }
 
-
+@Composable
+fun MainScreen(){
+    val navController = rememberNavController()
+    SplashNavigation(navController = navController)
+    
+}
 
 @Composable
 fun societyNavigation(){

@@ -15,18 +15,12 @@ import com.example.circleever.data.Society
 @Composable
 fun SocietyNavigation() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = SocietyScreens.screenSplash.route)
+    NavHost(navController = navController, startDestination = SocietyScreens.SocietyList.route)
     {
         composable(
             route = SocietyScreens.SocietyList.route
         ){
             SocietyList(navController = navController)
-        }
-
-        composable(
-            SocietyScreens.screenSplash.route,
-        ){
-            ScreenSplash(navController = navController)
         }
 
         composable(
