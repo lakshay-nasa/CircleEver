@@ -1,7 +1,5 @@
 package com.example.circleever
 
-import android.icu.text.CaseMap.Title
-import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -17,17 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.example.circleever.data.DataProvider
 import com.example.circleever.data.Society
+import com.example.circleever.navigation.SocietyScreens
 import com.example.circleever.ui.theme.OldLace
 import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.maryKate

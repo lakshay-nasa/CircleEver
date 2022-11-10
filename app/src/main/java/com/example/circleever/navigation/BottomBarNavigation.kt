@@ -1,10 +1,10 @@
 package com.example.circleever
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.circleever.navigation.BottomBarScreen
 
 @Composable
 fun BottomBarNavigation(navController: NavHostController){

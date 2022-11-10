@@ -1,4 +1,4 @@
-package com.example.circleever
+package com.example.circleever.navigation
 
 sealed class SocietyScreens(val route: String){
     object SocietyList : SocietyScreens("SocietyList")
