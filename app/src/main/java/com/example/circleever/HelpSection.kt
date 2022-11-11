@@ -23,6 +23,7 @@ import com.example.circleever.ui.theme.Warmyellow
 import com.example.circleever.ui.theme.maryKate
 
 class HelpSection {
+
     @Preview(showSystemUi = true, showBackground = true)
     @Composable
     fun Help() {
@@ -56,7 +57,7 @@ class HelpSection {
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "Help ⛑",
+                    text = "About Application",
                     textAlign = TextAlign.Center,
                     color = SeaGreen,
                     fontSize = 35.sp,
@@ -74,7 +75,7 @@ class HelpSection {
     fun Help(modifier: Modifier) {
         Column(
             modifier = Modifier
-                .padding(top = 50.dp),
+                .padding(top = 10.dp),
             verticalArrangement = Arrangement.Bottom,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -90,25 +91,25 @@ class HelpSection {
                 Column(
                     modifier = Modifier
                         .background(color = SeaGreen),
+
                 ) {
-                    Text(
-                        text = "About",
+                   /* Text(
+                        text = "About App",
                         fontSize = 20.sp,
-                        modifier = Modifier.padding(top = 20.dp),
+                        modifier = Modifier.padding(top = 20.dp, start = 10.dp),
                         color = Color(0xFFFCB144)
-                    )
+                    )*/
 
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(),
+                            .padding(start = 10.dp),
                         horizontalArrangement = Arrangement.SpaceEvenly
 
 
                         ) {
                         Text(
-                            text = "An application through which all the students and different societies can be connected on one platform. The application will provide an introduction to different societies and what a student will learn if they join the society. We provide a platform for all the societies to announce their events and make them reach each and every student.",
-                            fontSize = 20.sp,
+                            text = "An open source application created by students of Dcrust through which all the students and different societies can be connected on a single platform. The application will be a medium to connect freshers with different societies and help them to know about the various activities organised by them through our inbuilt notice board feature",                            fontSize = 20.sp,
                             modifier = Modifier.padding(top = 20.dp),
                             color = Color(0xFFFFF8E5)
                         )
@@ -124,7 +125,7 @@ class HelpSection {
                         Text(
                             text = "Contributors Panel",
                             fontSize = 20.sp,
-                            modifier = Modifier.padding(top = 80.dp),
+                            modifier = Modifier.padding(top = 40.dp),
                             color = Color(0xFFFCB144)
 
                         )
@@ -166,7 +167,7 @@ class HelpSection {
                         Text(
                             text = "Contribution Opportunities",
                             fontSize = 20.sp,
-                            modifier = Modifier.padding(top = 80.dp),
+                            modifier = Modifier.padding(top = 40.dp),
                             color = Color(0xFFFCB144)
 
                         )
@@ -182,7 +183,7 @@ class HelpSection {
                     ) {
                         Text(
                             text = "Interested open-source contributors can give their shots on the following\n" + "Github Repository : https://github.com/lakshay-nasa/CircleEver",
-                            modifier = Modifier.padding(top = 15.dp),
+                            modifier = Modifier.padding(top = 15.dp, start = 10.dp),
                             fontSize = 15.sp,
                             color = Color(0xFFFFF8E5)
 

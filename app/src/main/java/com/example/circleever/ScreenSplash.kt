@@ -36,7 +36,8 @@ fun ScreenSplash(navController: NavHostController) {
                 durationMillis = 800,
                 easing = {
                     OvershootInterpolator(4f).getInterpolation(it)
-                })
+                }
+            )
         )
         delay(1000L)
         navController.navigate(MainScreen.BottomBar.route){

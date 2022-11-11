@@ -2,6 +2,7 @@ package com.example.circleever
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -25,7 +26,7 @@ sealed class BottomBarScreen(
 
     object Help: BottomBarScreen(
         route = "help",
-        title = "Help",
-        icon = Icons.Default.Settings
+        title = "More Info",
+        icon = Icons.Default.Info
     )
 }
