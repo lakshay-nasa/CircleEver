@@ -11,3 +11,7 @@ val Teal200 = Color(0xFF03DAC5)
 val OldLace = Color(0xFFFFF8E5)
 val Warmyellow = Color(0xFFFCB144)
 val SeaGreen = Color(0XFF00A19D)
+val seaGreen1 = Color(0xff14e3de)
+val SeaGreen2 = Color(0XFF02b5b1)
+val SeaGreen3 = Color(0XFF02b0ac)
+
