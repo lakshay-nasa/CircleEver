@@ -10,11 +10,9 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.circleever.ui.theme.SeaGreen
-import com.example.circleever.ui.theme.maryKate
 import androidx.compose.ui.Modifier
 import com.example.circleever.navigation.BottomBarScreen
-import com.example.circleever.ui.theme.OldLace
+import com.example.circleever.ui.theme.*
 
 @Composable
 fun MainBottomBar(){
@@ -39,6 +37,8 @@ fun BottomBar(navController: NavHostController) {
     BottomNavigation(
         modifier = Modifier,
         backgroundColor = SeaGreen,
+
+
     ) {
         screens.forEach { screen ->
             AddItem(

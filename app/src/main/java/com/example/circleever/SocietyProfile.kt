@@ -37,11 +37,13 @@ class SocietyProfile(
 
 
 ) {
+    //contactUS_Button
     @Composable
     fun Society_View(navController: NavController){
         SocietyName(modifier = Modifier)
         Column(modifier = Modifier
-            .fillMaxSize().background(color = OldLace)
+            .fillMaxSize()
+            .background(color = OldLace)
             .padding(top = 0.dp, bottom = 30.dp), verticalArrangement = Arrangement.Top,) {
             AboutPanel(modifier= Modifier)
         }
@@ -49,6 +51,7 @@ class SocietyProfile(
     }
 
 
+    // Top Heading for page
     @Composable
     fun SocietyName(modifier: Modifier){
         Column(
@@ -86,6 +89,7 @@ class SocietyProfile(
 
 
 
+    // center image of society
     @Composable
     fun AboutPanel(modifier: Modifier) {
         Column(
@@ -118,19 +122,25 @@ class SocietyProfile(
                     Card(modifier = Modifier.clip(RoundedCornerShape(topEndPercent = 4, topStartPercent = 4, bottomStartPercent = 10, bottomEndPercent = 10)),
                         backgroundColor = OldLace
                         ) {
+                        // Heading about us
                         Text(
                             text = "About Us",
                             textAlign = TextAlign.Start,
+                            color = SeaGreen,
+                            fontFamily = maryKate,
                             fontSize = 22.sp,
-                            modifier = Modifier.padding(start = 10.dp)
+                            modifier = Modifier.padding(start = 10.dp, top = 4.dp)
                         )
 
+                        // Content of about us
                         val scroll = rememberScrollState(0)
                         Box(modifier = Modifier
                             .fillMaxWidth()
                             .padding(10.dp, top = 30.dp)) {
                             Text(
                                 text = "${sAbout}",
+                                color = Color.Black,
+                                fontFamily = maryKate,
                                 textAlign = TextAlign.Start,
                                 fontSize = 15.sp,
                                 modifier = Modifier
