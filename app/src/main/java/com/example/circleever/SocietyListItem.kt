@@ -60,7 +60,7 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
 
                 Modifier.clickable {
                     val societyDetails = Society(
-                        title = "${societies.name}",
+                        title = "${societies.title}",
                         about = "${societies.about}",
                         description = "{society.description}",
                         id = 1,
@@ -88,7 +88,7 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
                         .align(Alignment.CenterVertically)
                 ) {
                     Text(
-                        text = societies.name,
+                        text = societies.title,
                         style = typography.h6,
                         fontFamily = maryKate,
                         color = Color.Black
