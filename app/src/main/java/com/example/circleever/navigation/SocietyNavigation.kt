@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.Scaffold
 import com.example.circleever.data.Society
+import com.example.circleever.navigation.SocietyScreens
 
 @Composable
 fun SocietyNavigation() {

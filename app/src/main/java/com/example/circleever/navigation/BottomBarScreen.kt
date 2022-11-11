@@ -1,4 +1,4 @@
-package com.example.circleever
+package com.example.circleever.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
