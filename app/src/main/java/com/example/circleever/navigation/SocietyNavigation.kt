@@ -10,6 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.Scaffold
+import com.example.circleever.SocietySection.SocietyContact
+import com.example.circleever.SocietySection.SocietyProfile
 import com.example.circleever.data.Society
 import com.example.circleever.navigation.SocietyScreens
 
@@ -81,7 +83,7 @@ fun SocietyNavigation() {
 fun SocietyList(navController: NavController){
     Scaffold(
         content = {
-            societyContent(navController)
+            SocietyListContent(navController)
         }
     )
 }

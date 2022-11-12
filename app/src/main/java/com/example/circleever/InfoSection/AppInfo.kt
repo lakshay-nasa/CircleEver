@@ -1,4 +1,4 @@
-package com.example.circleever
+package com.example.circleever.InfoSection
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -22,38 +22,25 @@ import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
 import com.example.circleever.ui.theme.maryKate
 
-class SocietyContact(
+class AppInfo {
 
-    val sName: String,
-    val facilitator1: String,
-    val facilitator2: String,
-    val contact1: String,
-    val contact2: String,
-    val instagramLink: String,
-    val linkedInLink: String,
-
-
-
-    ) {
-//    @Preview(showSystemUi = true, showBackground = true)
+    @Preview(showSystemUi = true, showBackground = true)
     @Composable
-    fun ContactUs() {
-        SocietyName(modifier = Modifier)
+    fun Help() {
+        SocietyHelp(modifier = Modifier)
         Column(
             modifier = Modifier
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Bottom,
         ) {
-            ContactWindow(modifier = Modifier)
+            Help(modifier = Modifier)
         }
 //        Links(modifier = Modifier)
     }
 
 
-
-
     @Composable
-    fun SocietyName(modifier: Modifier) {
+    fun SocietyHelp(modifier: Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxSize().background(color = OldLace)
@@ -70,7 +57,7 @@ class SocietyContact(
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "$sName",
+                    text = "About Application",
                     textAlign = TextAlign.Center,
                     color = SeaGreen,
                     fontSize = 35.sp,
@@ -84,12 +71,11 @@ class SocietyContact(
 
     }
 
-
     @Composable
-    fun ContactWindow(modifier: Modifier) {
+    fun Help(modifier: Modifier) {
         Column(
             modifier = Modifier
-                .padding(top = 50.dp),
+                .padding(top = 10.dp),
             verticalArrangement = Arrangement.Bottom,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -105,36 +91,29 @@ class SocietyContact(
                 Column(
                     modifier = Modifier
                         .background(color = SeaGreen),
+
                 ) {
-                    Text(
-                        text = "Contact Us",
+                   /* Text(
+                        text = "About App",
                         fontSize = 20.sp,
                         modifier = Modifier.padding(top = 20.dp, start = 10.dp),
                         color = Color(0xFFFCB144)
-                    )
+                    )*/
 
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(),
-                        horizontalArrangement = Arrangement.SpaceEvenly,
+                            .padding(start = 10.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly
 
 
                         ) {
                         Text(
-                            text = "Co-ordinators",
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(top = 20.dp),
-                            color = Color(0xFFFFF8E5)
-                        )
-                        Text(
-                            text = "Contact Details",
-                            fontSize = 20.sp,
+                            text = "An open source application created by students of Dcrust through which all the students and different societies can be connected on a single platform. The application will be a medium to connect freshers with different societies and help them to know about the various activities organised by them through our inbuilt notice board feature",                            fontSize = 20.sp,
                             modifier = Modifier.padding(top = 20.dp),
                             color = Color(0xFFFFF8E5)
                         )
                     }
-
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -144,96 +123,78 @@ class SocietyContact(
 
                     ) {
                         Text(
-                            text = "$facilitator1",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
+                            text = "Contributors Panel",
+                            fontSize = 20.sp,
+                            modifier = Modifier.padding(top = 40.dp),
+                            color = Color(0xFFFCB144)
 
-                            )
-                        Text(
-                            text = "$contact1",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
-
-
-                            )
-                    }
-
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(),
-                        horizontalArrangement = Arrangement.SpaceEvenly
-
-
-                    ) {
-                        Text(
-                            text = "$facilitator2",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
-
-                            )
-                        Text(
-                            text = "$contact2",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
-
-
-                            )
-                    }
-
-                    Text(
-                        text = "Follow Us",
-                        fontSize = 20.sp,
-                        modifier = Modifier.padding(top = 80.dp, start = 10.dp),
-                        color = Color(0xFFFCB144)
-
-                    )
-
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(),
-                        horizontalArrangement = Arrangement.SpaceEvenly
-
-
-                    ) {
-                        Text(
-                            text = "Instagram",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
-                            color = Color(0xFFFFF8E5)
-
-                            )
-                        Text(
-                            text = "$instagramLink",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
-
-
-                            )
-                    }
-
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(),
-                        horizontalArrangement = Arrangement.SpaceEvenly
-
-
-                    ) {
-                        Text(
-                            text = "LinkedIn",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
-                            color = Color(0xFFFFF8E5)
-
-                            )
-                        Text(
-                            text = "$linkedInLink",
-                            modifier = Modifier.padding(top = 15.dp),
-                            fontSize = 15.sp,
                         )
                     }
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+
+
+                    ) {
+                        Text(
+                            text = "Aditi",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
+                            color = Color(0xFFFFF8E5)
+
+                        )
+                        Text(
+                            text = "Link:XXXXXXX",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
+
+
+                            )
+                    }
+
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+
+
+                    ) {
+                        Text(
+                            text = "Contribution Opportunities",
+                            fontSize = 20.sp,
+                            modifier = Modifier.padding(top = 40.dp),
+                            color = Color(0xFFFCB144)
+
+                        )
+                    }
+
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+
+
+                    ) {
+                        Text(
+                            text = "Interested open-source contributors can give their shots on the following\n" + "Github Repository : https://github.com/lakshay-nasa/CircleEver",
+                            modifier = Modifier.padding(top = 15.dp, start = 10.dp),
+                            fontSize = 15.sp,
+                            color = Color(0xFFFFF8E5)
+
+                        )
+                    }
+
+
+
+
+
+
 
 
 

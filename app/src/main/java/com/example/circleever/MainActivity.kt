@@ -6,18 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.circleever.ui.theme.CircleEverTheme
 import com.example.circleever.ui.theme.SeaGreen
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.circleever.ui.theme.OldLace
+import com.example.circleever.InfoSection.AppInfo
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +58,6 @@ fun noticeBoard(){
 
 @Composable
 fun helpSection(){
-        val obj1 = HelpSection()
+        val obj1 = AppInfo()
         obj1.Help()
 }

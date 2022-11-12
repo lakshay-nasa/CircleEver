@@ -1,4 +1,4 @@
-package com.example.circleever
+package com.example.circleever.navigation
 
 sealed class MainScreen(val route: String){
     object ScreenSplash: MainScreen(route = "ScreenSplash")

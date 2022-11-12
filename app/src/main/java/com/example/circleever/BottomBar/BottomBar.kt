@@ -11,6 +11,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.unit.dp
 import com.example.circleever.navigation.BottomBarScreen
 import com.example.circleever.ui.theme.*
 
@@ -35,7 +37,8 @@ fun BottomBar(navController: NavHostController) {
     val currentDestination = navBackStackEntry?.destination
 
     BottomNavigation(
-        modifier = Modifier,
+        modifier = Modifier
+            .shadow(25.dp),
         backgroundColor = SeaGreen,
 
 

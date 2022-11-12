@@ -1,4 +1,4 @@
-package com.example.circleever
+package com.example.circleever.SocietySection
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -22,25 +22,38 @@ import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
 import com.example.circleever.ui.theme.maryKate
 
-class HelpSection {
+class SocietyContact(
 
-    @Preview(showSystemUi = true, showBackground = true)
+    val sName: String,
+    val facilitator1: String,
+    val facilitator2: String,
+    val contact1: String,
+    val contact2: String,
+    val instagramLink: String,
+    val linkedInLink: String,
+
+
+
+    ) {
+//    @Preview(showSystemUi = true, showBackground = true)
     @Composable
-    fun Help() {
-        SocietyHelp(modifier = Modifier)
+    fun ContactUs() {
+        SocietyName(modifier = Modifier)
         Column(
             modifier = Modifier
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Bottom,
         ) {
-            Help(modifier = Modifier)
+            ContactWindow(modifier = Modifier)
         }
 //        Links(modifier = Modifier)
     }
 
 
+
+
     @Composable
-    fun SocietyHelp(modifier: Modifier) {
+    fun SocietyName(modifier: Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxSize().background(color = OldLace)
@@ -57,7 +70,7 @@ class HelpSection {
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "About Application",
+                    text = "$sName",
                     textAlign = TextAlign.Center,
                     color = SeaGreen,
                     fontSize = 35.sp,
@@ -71,11 +84,12 @@ class HelpSection {
 
     }
 
+
     @Composable
-    fun Help(modifier: Modifier) {
+    fun ContactWindow(modifier: Modifier) {
         Column(
             modifier = Modifier
-                .padding(top = 10.dp),
+                .padding(top = 50.dp),
             verticalArrangement = Arrangement.Bottom,
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
@@ -91,45 +105,35 @@ class HelpSection {
                 Column(
                     modifier = Modifier
                         .background(color = SeaGreen),
-
                 ) {
-                   /* Text(
-                        text = "About App",
+                    Text(
+                        text = "Contact Us",
                         fontSize = 20.sp,
                         modifier = Modifier.padding(top = 20.dp, start = 10.dp),
                         color = Color(0xFFFCB144)
-                    )*/
+                    )
 
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(start = 10.dp),
-                        horizontalArrangement = Arrangement.SpaceEvenly
+                            .padding(),
+                        horizontalArrangement = Arrangement.SpaceEvenly,
 
 
                         ) {
                         Text(
-                            text = "An open source application created by students of Dcrust through which all the students and different societies can be connected on a single platform. The application will be a medium to connect freshers with different societies and help them to know about the various activities organised by them through our inbuilt notice board feature",                            fontSize = 20.sp,
+                            text = "Co-ordinators",
+                            fontSize = 20.sp,
+                            modifier = Modifier.padding(top = 20.dp),
+                            color = Color(0xFFFFF8E5)
+                        )
+                        Text(
+                            text = "Contact Details",
+                            fontSize = 20.sp,
                             modifier = Modifier.padding(top = 20.dp),
                             color = Color(0xFFFFF8E5)
                         )
                     }
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(),
-                        horizontalArrangement = Arrangement.SpaceEvenly
-
-
-                    ) {
-                        Text(
-                            text = "Contributors Panel",
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(top = 40.dp),
-                            color = Color(0xFFFCB144)
-
-                        )
-                    }
 
                     Row(
                         modifier = Modifier
@@ -140,14 +144,13 @@ class HelpSection {
 
                     ) {
                         Text(
-                            text = "Aditi",
+                            text = "$facilitator1",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
-                            color = Color(0xFFFFF8E5)
 
-                        )
+                            )
                         Text(
-                            text = "Link:XXXXXXX",
+                            text = "$contact1",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
 
@@ -155,7 +158,6 @@ class HelpSection {
                             )
                     }
 
-
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -165,14 +167,28 @@ class HelpSection {
 
                     ) {
                         Text(
-                            text = "Contribution Opportunities",
-                            fontSize = 20.sp,
-                            modifier = Modifier.padding(top = 40.dp),
-                            color = Color(0xFFFCB144)
+                            text = "$facilitator2",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
 
-                        )
+                            )
+                        Text(
+                            text = "$contact2",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
+
+
+                            )
                     }
 
+                    Text(
+                        text = "Follow Us",
+                        fontSize = 20.sp,
+                        modifier = Modifier.padding(top = 80.dp, start = 10.dp),
+                        color = Color(0xFFFCB144)
+
+                    )
+
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -182,19 +198,42 @@ class HelpSection {
 
                     ) {
                         Text(
-                            text = "Interested open-source contributors can give their shots on the following\n" + "Github Repository : https://github.com/lakshay-nasa/CircleEver",
-                            modifier = Modifier.padding(top = 15.dp, start = 10.dp),
+                            text = "Instagram",
+                            modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
                             color = Color(0xFFFFF8E5)
 
-                        )
+                            )
+                        Text(
+                            text = "$instagramLink",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
+
+
+                            )
                     }
 
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(),
+                        horizontalArrangement = Arrangement.SpaceEvenly
 
 
+                    ) {
+                        Text(
+                            text = "LinkedIn",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
+                            color = Color(0xFFFFF8E5)
 
-
-
+                            )
+                        Text(
+                            text = "$linkedInLink",
+                            modifier = Modifier.padding(top = 15.dp),
+                            fontSize = 15.sp,
+                        )
+                    }
 
 
 

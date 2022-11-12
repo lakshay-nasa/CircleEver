@@ -1,4 +1,4 @@
-package com.example.circleever
+package com.example.circleever.SocietySection
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
+import com.example.circleever.R
 import com.example.circleever.navigation.SocietyScreens
 import com.example.circleever.ui.theme.OldLace
 import com.example.circleever.ui.theme.SeaGreen
