@@ -43,59 +43,37 @@ import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import androidx.navigation.NavController
+import com.example.circleever.navigation.SocietyScreens
 
 
-val showDialog = mutableStateOf(false)
-
-
-
-
-@Composable
-fun alert() {
-    AlertDialog(
-        title = {
-            androidx.compose.material.Text(text = "Test")
-        },
-        text = {
-            androidx.compose.material.Text("Test")
-        },
-        onDismissRequest = {
-
-        },
-        buttons = {
-            androidx.compose.material.Button(onClick = { showDialog.value = false }) {
-                androidx.compose.material.Text("test")
-            }
-        }
-
-    )
-}
+//val showDialog = mutableStateOf(false)
 
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-fun NoticeBoard() {
+fun NoticeBoard(navController: NavController) {
 
-    val dialogState: MutableState<Boolean> = remember {
-        mutableStateOf(false)
-    }
-
-
-    if (dialogState.value) {
-        Dialog(
-            onDismissRequest = { dialogState.value = false },
-            content = {
-                CompleteDialogContent("Please Login First", dialogState, "") { BodyContent() }
-            },
-            properties = DialogProperties(
-                dismissOnBackPress = false,
-                dismissOnClickOutside = false
-            )
-        )
+//    val dialogState: MutableState<Boolean> = remember {
+//        mutableStateOf(false)
+//    }
+//
+//
+//    if (dialogState.value) {
+//        Dialog(
+//            onDismissRequest = { dialogState.value = false },
+//            content = {
+//                CompleteDialogContent("Please Login First", dialogState, "") { BodyContent() }
+//            },
+//            properties = DialogProperties(
+//                dismissOnBackPress = false,
+//                dismissOnClickOutside = false
+//            )
+//        )
 //        dvm.doSomethingMore()
-    }
+//    }
 //    else {
 //        Toast.makeText(ctx, "Dialog Closed", Toast.LENGTH_SHORT).show()
 //        dvm.doSomething()
@@ -116,8 +94,9 @@ fun NoticeBoard() {
             floatingActionButton = {
                 FloatingActionButton(onClick = {
                                                Log.d("AddButton", "Button Pressed")
+                    navController.navigate(NoticeBoardScreens.NoticeBoardLogin.route)
 
-                    dialogState.value = true
+//                    dialogState.value = true
                 }, modifier = Modifier
                     .clip(shape = CircleShape)
                     .shadow(50.dp, ambientColor = Color.Black)) {

@@ -1,0 +1,19 @@
+package com.example.circleever.NoticeSection
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+
+class AddNoticeWindow {
+
+    @Composable
+    fun AddNotice() {
+        Column(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Text(text = "hello")
+        }
+    }
+}
