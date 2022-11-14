@@ -62,7 +62,8 @@ class SocietyProfile(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Card(modifier = Modifier
+            Card(
+                modifier = Modifier
                 .fillMaxWidth(0.8f)
 //                .fillMaxHeight(0.08f)
                 .clip(RectangleShape)
@@ -120,10 +121,10 @@ class SocietyProfile(
                 Column(modifier
                     .padding(start = 15.dp, end = 15.dp, top = 0.dp, bottom = 10.dp)
                 ) {
+                    // Heading About Us
                     Card(modifier = Modifier.clip(RoundedCornerShape(topEndPercent = 4, topStartPercent = 4, bottomStartPercent = 10, bottomEndPercent = 10)),
                         backgroundColor = OldLace
                         ) {
-                        // Heading about us
                         Text(
                             text = "About Us",
                             textAlign = TextAlign.Start,

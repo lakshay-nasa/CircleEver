@@ -64,7 +64,9 @@ class SocietyContact(
             Card(
                 modifier = Modifier
                     .padding(0.dp)
-                    .clip(RectangleShape),
+                    .fillMaxWidth(0.8f)
+                    .clip(RectangleShape)
+                    .weight(1f, fill = false),
                 backgroundColor = Warmyellow
             )
             {

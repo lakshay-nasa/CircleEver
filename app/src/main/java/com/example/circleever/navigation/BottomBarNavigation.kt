@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.circleever.NoticeSection.NoticeBoardNavigation
 import com.example.circleever.navigation.BottomBarScreen
 
 @Composable
@@ -16,7 +17,7 @@ fun BottomBarNavigation(navController: NavHostController){
         }
 
         composable(route = BottomBarScreen.NoticeBoard.route){
-            noticeBoard()
+            NoticeBoardNavigation()
         }
 
         composable(route = BottomBarScreen.Help.route){
