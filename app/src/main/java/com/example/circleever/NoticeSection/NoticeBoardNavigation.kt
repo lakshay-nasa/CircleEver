@@ -34,8 +34,11 @@ fun NoticeBoardNavigation(){
         composable(
             route = NoticeBoardScreens.AddNoticeWindow.route
         ){
+            val noticeId = Firebase.auth.currentUser?.uid.orEmpty()
             val noticeObj1 = AddNoticeWindow()
-            noticeObj1.AddNotice()
+            noticeObj1.AddNotice(noticeViewModel = NoticeViewModel(), noticeId = noticeId){
+
+            }
         }
 
     }
