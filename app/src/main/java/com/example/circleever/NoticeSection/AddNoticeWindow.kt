@@ -1,6 +1,7 @@
 package com.example.circleever.NoticeSection
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background
@@ -34,13 +35,12 @@ class AddNoticeWindow {
 
         val noticeUiState = noticeViewModel?.noticeUiState ?: NoticeUiState()
 
-        val isFormsNotBlank = noticeUiState.noticeDetails.isNotBlank() &&
-                noticeUiState.noticeTitle.isNotBlank()
+        val isFormsNotBlank = noticeUiState.societyName.isNotBlank() && noticeUiState.noticeTitle.isNotBlank() && noticeUiState.noticeDetails.isNotBlank()
 
         val isNoticeIdNotBlank = noticeId.isNotBlank()
-        val icon = Icons.Default.Refresh
-//        val icon = if (isNoticeIdNotBlank) Icons.Default.Refresh
-//        else Icons.Default.Check
+//        val icon = Icons.Default.Refresh
+        val icon = if (isNoticeIdNotBlank) Icons.Default.Refresh
+        else Icons.Default.Check
         LaunchedEffect(key1 = Unit) {
             if (isNoticeIdNotBlank) {
                 noticeViewModel?.getNotice(noticeId)
@@ -59,14 +59,18 @@ class AddNoticeWindow {
             modifier = Modifier
                 .fillMaxHeight(0.94f),
             scaffoldState = scaffoldState,
-            floatingActionButton = { //visible = isFormsNotBlank
+            floatingActionButton = { // visible = isFormsNotBlank
                 AnimatedVisibility(visible = true) {
                     FloatingActionButton(
                         onClick = {
                             if (isNoticeIdNotBlank) {
                                 noticeViewModel?.updateNotice(noticeId)
+                                Log.d("Tag", "Notice already exists.")
+
                             } else {
-                                noticeViewModel?.addNotice(noticeId)
+                                noticeViewModel?.addNotice()
+                                Log.d("Tag", "Notice Added")
+
                             }
                         }
                     ) {
@@ -153,7 +157,7 @@ class AddNoticeWindow {
                         .padding(8.dp),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Text,
-                        imeAction = ImeAction.Next
+                        imeAction = ImeAction.Done
                     )
                 )
 

@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.callbackFlow
 class NoticeRepository {
 
     fun getUserId(): String = Firebase.auth.currentUser?.uid.orEmpty()
+    fun user() = Firebase.auth.currentUser
 
     private val firestore = FirebaseFirestore.getInstance()
 

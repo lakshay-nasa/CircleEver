@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.circleever.data.Notices
 import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
@@ -15,6 +16,11 @@ class NoticeViewModel(private val noticeRepository: NoticeRepository = NoticeRep
 
     var noticeUiState by mutableStateOf(NoticeUiState())
         private set
+
+
+    private val user: FirebaseUser?
+        get() = noticeRepository.user()
+
 
     val noticeStateFlow = MutableStateFlow<NoticeResponse?>(null)
 
@@ -34,10 +40,10 @@ class NoticeViewModel(private val noticeRepository: NoticeRepository = NoticeRep
         noticeUiState = noticeUiState.copy(noticeURL = noticeURL)
     }
 
-    fun addNotice(noticeId: String) {
+    fun addNotice() {
         if (true) {
             noticeRepository.addNotice(
-                noticeId = noticeId,
+                noticeId = user!!.uid,
                 societyName = noticeUiState.societyName,
                 noticeTitle = noticeUiState.noticeTitle,
                 noticeDetails = noticeUiState.noticeDetails,
