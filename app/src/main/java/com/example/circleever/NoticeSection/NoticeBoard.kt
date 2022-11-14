@@ -45,7 +45,7 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.navigation.NavController
 import com.example.circleever.navigation.SocietyScreens
-
+import androidx.compose.material.Scaffold
 
 //val showDialog = mutableStateOf(false)
 
@@ -55,29 +55,6 @@ import com.example.circleever.navigation.SocietyScreens
 @Preview
 @Composable
 fun NoticeBoard(navController: NavController) {
-
-//    val dialogState: MutableState<Boolean> = remember {
-//        mutableStateOf(false)
-//    }
-//
-//
-//    if (dialogState.value) {
-//        Dialog(
-//            onDismissRequest = { dialogState.value = false },
-//            content = {
-//                CompleteDialogContent("Please Login First", dialogState, "") { BodyContent() }
-//            },
-//            properties = DialogProperties(
-//                dismissOnBackPress = false,
-//                dismissOnClickOutside = false
-//            )
-//        )
-//        dvm.doSomethingMore()
-//    }
-//    else {
-//        Toast.makeText(ctx, "Dialog Closed", Toast.LENGTH_SHORT).show()
-//        dvm.doSomething()
-//    }
 
 
 
@@ -136,18 +113,8 @@ fun NoticeBoard(navController: NavController) {
             }
 
 
-
-        ) { values ->
-            LazyColumn(contentPadding = values) {
-                items(2) {
-                    NoticeCard(
-                        title = "Bacon ipsum",
-                        description = "Bacon ipsum dolor amet pork shankle beef andouille ball tip. Meatball corned beef swine, strip steak bacon jerky doner tongue biltong pork loin drumstick sausage hamburger burgdoggen." +
-                                "Bacon ipsum dolor amet pork shankle beef andouille ball tip. Meatball corned beef swine, strip steak bacon jerky doner tongue biltong pork loin drumstick sausage hamburger burgdoggen.",
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-            }
+        ) {
+                    NoticeList()
         }
     }
 }
