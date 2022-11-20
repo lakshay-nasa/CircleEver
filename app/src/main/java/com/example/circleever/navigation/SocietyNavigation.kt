@@ -12,7 +12,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.compose.material.Scaffold
 import com.example.circleever.SocietySection.SocietyContact
 import com.example.circleever.SocietySection.SocietyProfile
-import com.example.circleever.data.Society
+import com.example.circleever.data.Societies
 import com.example.circleever.navigation.SocietyScreens
 
 @Composable
@@ -30,15 +30,33 @@ fun SocietyNavigation() {
             route = SocietyScreens.SocietyView.route,
         ){
             val result =
-                navController.previousBackStackEntry?.savedStateHandle?.get<Society>("societyDetails")
+                navController.previousBackStackEntry?.savedStateHandle?.get<Societies>("societyDetails")
 
 //            <------- Testing ------->
 //            Log.d("SocietyView", "${result?.title}")
 //            Log.d("SocietyView", "${result?.about}")
-            Log.d("SocietyView", "${result?.societyImageId} clicked")
-            Log.d("SocietyView", "${result?.id} clicked")
+            Log.d("SocietyView", "${result?.logoURL} clicked")
+            Log.d("SocietyView", "${result?.title} clicked")
 
-            SocietyView("${result?.title}", "${result?.about}", "${result?.societyImageId}" ,navController)
+            SocietyView("${result?.title}",
+                "${result?.about}",
+                "${result?.tagLine}",
+                "${result?.achievement0}",
+                "${result?.achievement1}",
+                "${result?.achievement2}",
+                "${result?.achievement3}",
+                "${result?.achievement4}",
+                "${result?.logoURL}",
+                "${result?.contactDetails}",
+                "${result?.coordinator1}",
+                "${result?.coordinatorDetails1}",
+                "${result?.coordinator2}",
+                "${result?.coordinatorDetails2}",
+                "${result?.socialLink1}",
+                "${result?.socialLink2}",
+                "${result?.socialLink3}",
+                "${result?.socialLink4}",
+            navController)
         }
 
 
@@ -47,12 +65,12 @@ fun SocietyNavigation() {
             route = SocietyScreens.ContactView.route,
         ){
             val result =
-                navController.previousBackStackEntry?.savedStateHandle?.get<Society>("societyDetails")
+                navController.previousBackStackEntry?.savedStateHandle?.get<Societies>("societyDetails")
 
 //                        Log.d("SocietyView", "${result?.facilitators}")
 
 //            ContactView("${result?.title}", arrayOf(result?.facilitators), result.contact, result.societySocialLinks)
-            ContactView("${result?.title}", "${result?.facilitator1}", "${result?.facilitator2}", "${result?.contact1}", "${result?.contact2}", "${result?.InstagramLink}", "${result?.LinkedInLink}")
+            ContactView("${result?.title}", "${result?.coordinator1}", "${result?.coordinatorDetails1}", "${result?.coordinator2}", "${result?.coordinatorDetails2}", "${result?.socialLink1}", "${result?.socialLink2}", "${result?.socialLink3}", "${result?.socialLink4}")
         }
     }
 }
@@ -91,21 +109,40 @@ fun SocietyList(navController: NavController){
 
 
 @Composable
-fun SocietyView(title: String, about: String, imageId: String, navController:NavController){
+fun SocietyView(
+    title: String,
+    about: String,
+    tagLine: String,
+    achievement0: String,
+    achievement1: String,
+    achievement2: String,
+    achievement3: String,
+    achievement4: String,
+    logoURL: String,
+    contactDetails: String,
+    coordinator1: String,
+    coordinatorDetails1: String,
+    coordinator2: String,
+    coordinatorDetails2: String,
+    socialLink1: String,
+    socialLink2: String,
+    socialLink3: String,
+    socialLink4: String,
+    navController:NavController){
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ){
-        val SVobj = SocietyProfile( "${title}", "${about}", imageId)
+        val SVobj = SocietyProfile(title, about, tagLine, achievement0, achievement1, achievement2, achievement3, achievement4, logoURL, contactDetails, coordinator1, coordinatorDetails1, coordinator2, coordinatorDetails2, socialLink1, socialLink2, socialLink3, socialLink4)
         SVobj.Society_View(navController)
     }
 }
 
 
 @Composable
-fun ContactView(title: String, facilitator1: String, facilitator2: String, contact1: String, contact2: String, instagramLink: String, linkedInLink: String){
+fun ContactView(title: String, coordinator1: String, coordinatorDetails1: String, coordinator2: String, coordinatorDetails2: String, socialLink1: String, socialLink2: String, socialLink3: String, socialLink4: String){
 //    val CVobj = SocietyContact("${facilitators}", "${contact}", "${links}")
-    val CVobj = SocietyContact("${title}", facilitator1, facilitator2, contact1, contact2, instagramLink, linkedInLink)
+    val CVobj = SocietyContact(title, coordinator1, coordinatorDetails1, coordinator2, coordinatorDetails2, socialLink1, socialLink2, socialLink3, socialLink4)
     CVobj.ContactUs()
 }
 

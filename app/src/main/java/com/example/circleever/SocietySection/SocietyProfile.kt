@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
+import coil.compose.rememberAsyncImagePainter
 import com.example.circleever.R
 import com.example.circleever.navigation.SocietyScreens
 import com.example.circleever.ui.theme.OldLace
@@ -31,9 +32,24 @@ import com.example.circleever.ui.theme.maryKate
 
 class SocietyProfile(
 
-    val sName: String,
-    val sAbout: String,
-    val imageId: String,
+    val title: String,
+    val about: String,
+    val tagLine: String,
+    val achievement0: String,
+    val achievement1: String,
+    val achievement2: String,
+    val achievement3: String,
+    val achievement4: String,
+    val logoURL: String,
+    val contactDetails: String,
+    val coordinator1: String,
+    val coordinatorDetails1: String,
+    val coordinator2: String,
+    val coordinatorDetails2: String,
+    val socialLink1: String,
+    val socialLink2: String,
+    val socialLink3: String,
+    val socialLink4: String,
 
 
 
@@ -73,7 +89,7 @@ class SocietyProfile(
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "$sName",
+                    text = title,
                     textAlign = TextAlign.Center,
                     color = SeaGreen,
                     fontSize = 35.sp,
@@ -108,10 +124,11 @@ class SocietyProfile(
                 .clip(CircleShape)
             ) {
                 Image(
-                    painter = painterResource(
-//                        id = imageId.toInt()
-                    id = R.drawable.sampleicon
-                    ),
+//                    painter = painterResource(
+////                        id = imageId.toInt()
+//                    id = R.drawable.sampleicon
+//                    ),
+                    painter = rememberAsyncImagePainter(logoURL),
                     contentDescription = "Society View",
                     Modifier.size(280.dp)
                 )
@@ -140,7 +157,7 @@ class SocietyProfile(
                             .fillMaxWidth()
                             .padding(10.dp, top = 30.dp)) {
                             Text(
-                                text = "${sAbout}",
+                                text = "$about \n $tagLine \n $achievement0 \n $achievement1 \n $achievement2 \n $achievement3 \n $achievement4",
                                 color = Color.Black,
                                 fontFamily = maryKate,
                                 textAlign = TextAlign.Start,

@@ -10,29 +10,25 @@ import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import coil.compose.rememberAsyncImagePainter
 import com.example.circleever.data.Societies
-import com.example.circleever.data.Society
 import com.example.circleever.models.SocietiesViewModel
 import com.example.circleever.navigation.SocietyScreens
 import com.example.circleever.repo.SocietiesRepository
 import com.example.circleever.ui.theme.OldLace
 import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.maryKate
-import kotlinx.coroutines.flow.asStateFlow
 
 
 @Preview
@@ -59,18 +55,25 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
 //            Modifier.clickable(onClick = { Log.d("Button", "${society.title} is Clicked")})
 
                 Modifier.clickable {
-                    val societyDetails = Society(
-                        title = "${societies.title}",
-                        about = "${societies.about}",
-                        description = "{society.description}",
-                        id = 1,
-                        societyImageId = 2,
-                        facilitator1 = "{society.facilitator1}",
-                        facilitator2 = "{society.facilitator2}",
-                        contact1 = "{society.contact1}",
-                        contact2 = "{society.contact2}",
-                        InstagramLink = "{society.InstagramLink}",
-                        LinkedInLink = "{society.LinkedInLink}"
+                    val societyDetails = Societies(
+                        title = societies.title,
+                        about = societies.about,
+                        tagLine = societies.tagLine,
+                        achievement0 = societies.achievement0,
+                        achievement1 = societies.achievement1,
+                        achievement2 = societies.achievement2,
+                        achievement3 = societies.achievement3,
+                        achievement4 = societies.achievement4,
+                        logoURL = societies.logoURL,
+                        contactDetails = societies.contactDetails,
+                        coordinator1 = societies.coordinator1,
+                        coordinator2 = societies.coordinator2,
+                        coordinatorDetails1 = societies.coordinatorDetails1,
+                        coordinatorDetails2 = societies.coordinatorDetails2,
+                        socialLink1 = societies.socialLink1,
+                        socialLink2 = societies.socialLink2,
+                        socialLink3 = societies.socialLink3,
+                        socialLink4 = societies.socialLink4,
                     )
 
                     navController.currentBackStackEntry?.savedStateHandle?.set(
@@ -80,7 +83,7 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
                     navController.navigate(SocietyScreens.SocietyView.route)
                 },
             ) {
-//                SocietyImage(society = society)
+                SocietyImage(societies = societies)
                 Column(
                     modifier = Modifier
                         .padding(12.dp)
@@ -88,7 +91,7 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
                         .align(Alignment.CenterVertically)
                 ) {
                     Text(
-                        text = societies.title,
+                        text = "${societies.title}",
                         style = typography.h6,
                         fontFamily = maryKate,
                         color = Color.Black
@@ -107,15 +110,15 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
 
 
 @Composable
-private fun SocietyImage(society: Society){
+private fun SocietyImage(societies: Societies){
     Image(
-        painter = painterResource(id = society.societyImageId),
+        painter = rememberAsyncImagePainter(societies.logoURL),
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = Modifier
             .padding(8.dp)
             .size(84.dp)
-            .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
+            .clip(RoundedCornerShape(corner = CornerSize(20.dp)))
 
     )
 }
