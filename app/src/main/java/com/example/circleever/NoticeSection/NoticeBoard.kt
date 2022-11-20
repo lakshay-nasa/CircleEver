@@ -62,8 +62,11 @@ fun NoticeBoard(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .background(color = SeaGreen),
-        color = SeaGreen,
-    ) {
+
+    )
+
+
+    {
         val isInsert = remember { mutableStateOf(false)}
         Scaffold(
 
@@ -94,8 +97,9 @@ fun NoticeBoard(navController: NavController) {
                 Card(modifier = Modifier
                     .fillMaxWidth(0.8f)
                     .clip(RectangleShape)
-                    .padding(start = 80.dp),
+                    .padding(start = 80.dp, bottom = 10.dp,top = 5.dp),
                     backgroundColor = Warmyellow,
+
 
                 ){
                     Text(

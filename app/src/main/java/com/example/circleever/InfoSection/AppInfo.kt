@@ -50,14 +50,14 @@ class AppInfo {
         ) {
             Card(
                 modifier = Modifier
-                    .padding(0.dp)
+                    .padding(5.dp)
                     .clip(RectangleShape),
                 backgroundColor = Warmyellow
             )
             {
                 Text(
                     modifier = Modifier.padding(5.dp),
-                    text = "About Application",
+                    text = "Circle Ever",
                     textAlign = TextAlign.Center,
                     color = SeaGreen,
                     fontSize = 35.sp,
@@ -93,12 +93,15 @@ class AppInfo {
                         .background(color = SeaGreen),
 
                 ) {
-                   /* Text(
+                    Text(
                         text = "About App",
                         fontSize = 20.sp,
-                        modifier = Modifier.padding(top = 20.dp, start = 10.dp),
+                        textAlign = TextAlign.Center,
+                        fontFamily = maryKate,
+                        modifier = Modifier
+                            .padding(top = 20.dp, start = 10.dp),
                         color = Color(0xFFFCB144)
-                    )*/
+                    )
 
                     Row(
                         modifier = Modifier
@@ -111,6 +114,7 @@ class AppInfo {
                         Text(
                             text = "An open source application created by students of Dcrust through which all the students and different societies can be connected on a single platform. The application will be a medium to connect freshers with different societies and help them to know about the various activities organised by them through our inbuilt notice board feature",                            fontSize = 20.sp,
                             modifier = Modifier.padding(top = 20.dp),
+                            fontFamily = maryKate,
                             color = Color(0xFFFFF8E5)
                         )
                     }
@@ -125,6 +129,7 @@ class AppInfo {
                         Text(
                             text = "Contributors Panel",
                             fontSize = 20.sp,
+                            fontFamily = maryKate,
                             modifier = Modifier.padding(top = 40.dp),
                             color = Color(0xFFFCB144)
 
@@ -140,13 +145,15 @@ class AppInfo {
 
                     ) {
                         Text(
-                            text = "Aditi",
+                            fontFamily = maryKate,
+                            text = "TEAM",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
                             color = Color(0xFFFFF8E5)
 
                         )
                         Text(
+                            fontFamily = maryKate,
                             text = "Link:XXXXXXX",
                             modifier = Modifier.padding(top = 15.dp),
                             fontSize = 15.sp,
@@ -167,6 +174,7 @@ class AppInfo {
                         Text(
                             text = "Contribution Opportunities",
                             fontSize = 20.sp,
+                            fontFamily = maryKate,
                             modifier = Modifier.padding(top = 40.dp),
                             color = Color(0xFFFCB144)
 
@@ -182,6 +190,7 @@ class AppInfo {
 
                     ) {
                         Text(
+                            fontFamily = maryKate,
                             text = "Interested open-source contributors can give their shots on the following\n" + "Github Repository : https://github.com/lakshay-nasa/CircleEver",
                             modifier = Modifier.padding(top = 15.dp, start = 10.dp),
                             fontSize = 15.sp,
