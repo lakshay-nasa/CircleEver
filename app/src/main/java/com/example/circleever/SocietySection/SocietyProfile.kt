@@ -124,11 +124,11 @@ class SocietyProfile(
                 .clip(CircleShape)
             ) {
                 Image(
-                    painter = painterResource(
-//                        id = imageId.toInt()
-                    id = R.drawable.sampleicon
-                    ),
-//                    painter = rememberAsyncImagePainter(logoURL),
+//                    painter = painterResource(
+////                        id = imageId.toInt()
+//                    id = R.drawable.sampleicon
+//                    ),
+                    painter = rememberAsyncImagePainter(logoURL),
                     contentDescription = "Society View",
                     Modifier.size(280.dp)
                 )
@@ -157,7 +157,7 @@ class SocietyProfile(
                             .fillMaxWidth()
                             .padding(10.dp, top = 30.dp)) {
                             Text(
-                                text = "$about $tagLine </br> <br> $achievement0 $achievement1 $achievement2 $achievement3 $achievement4",
+                                text = "$about \n $tagLine \n $achievement0 \n $achievement1 \n $achievement2 \n $achievement3 \n $achievement4",
                                 color = Color.Black,
                                 fontFamily = maryKate,
                                 textAlign = TextAlign.Start,

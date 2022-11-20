@@ -64,14 +64,16 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
                         achievement2 = societies.achievement2,
                         achievement3 = societies.achievement3,
                         achievement4 = societies.achievement4,
+                        logoURL = societies.logoURL,
+                        contactDetails = societies.contactDetails,
                         coordinator1 = societies.coordinator1,
                         coordinator2 = societies.coordinator2,
                         coordinatorDetails1 = societies.coordinatorDetails1,
                         coordinatorDetails2 = societies.coordinatorDetails2,
-                        SocialLink1 = societies.socialLink1,
-                        SocialLink2 = societies.socialLink2,
-                        SocialLink3 = societies.socialLink3,
-                        SocialLink4 = societies.socialLink4,
+                        socialLink1 = societies.socialLink1,
+                        socialLink2 = societies.socialLink2,
+                        socialLink3 = societies.socialLink3,
+                        socialLink4 = societies.socialLink4,
                     )
 
                     navController.currentBackStackEntry?.savedStateHandle?.set(
@@ -89,7 +91,7 @@ fun SocietyListItem(navController: NavController, societies: Societies) {
                         .align(Alignment.CenterVertically)
                 ) {
                     Text(
-                        text = societies.title,
+                        text = "${societies.title}",
                         style = typography.h6,
                         fontFamily = maryKate,
                         color = Color.Black

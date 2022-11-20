@@ -13,7 +13,6 @@ import androidx.compose.material.Scaffold
 import com.example.circleever.SocietySection.SocietyContact
 import com.example.circleever.SocietySection.SocietyProfile
 import com.example.circleever.data.Societies
-import com.example.circleever.data.Society
 import com.example.circleever.navigation.SocietyScreens
 
 @Composable
