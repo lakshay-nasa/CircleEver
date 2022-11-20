@@ -40,6 +40,10 @@ class NoticeViewModel(private val noticeRepository: NoticeRepository = NoticeRep
         noticeUiState = noticeUiState.copy(noticeURL = noticeURL)
     }
 
+//    fun deleteNote(noticeId:String) = noticeRepository.deleteNotice(noticeId){
+//        noticeUiState = noticeUiState.copy(noticeDeletedStatus = it)
+//    }
+
     fun addNotice() {
         if (true) {
             noticeRepository.addNotice(

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
@@ -19,21 +18,21 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.*
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.*
 import androidx.compose.ui.res.painterResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
-import com.example.circleever.NoticeSection.NoticeRepository
-import com.example.circleever.NoticeSection.NoticeViewModel
-import com.example.circleever.data.Notices
+import com.example.circleever.NoticeSection.*
 import com.example.circleever.NoticeSection.OnError
 import com.example.circleever.NoticeSection.OnSuccess
+import com.example.circleever.data.Notices
 import com.example.circleever.SocietySection.SocietyListItem
 import com.example.circleever.ui.theme.SeaGreen
 import com.example.circleever.ui.theme.Warmyellow
@@ -57,7 +56,7 @@ fun NoticeList(noticeViewModel: NoticeViewModel = viewModel(factory = NoticeView
             listOfNotices?.let {
                 LazyColumn(){
                     items(listOfNotices) {
-                        NoticeCard(notices = it)
+                        NoticeCard(noticeViewModel = NoticeViewModel() ,notices = it, onNoteClick = {})
                     }
                 }
             }
@@ -77,9 +76,18 @@ fun NoticeCard(
 //    noticeDetails: String,
 //    noticeURL: String,
 //    description: String,
+    noticeViewModel: NoticeViewModel?,
     notices:Notices,
+    onNoteClick: (noticeId: String) -> Unit,
     modifier: Modifier = Modifier,
 ){
+
+    val noticeUiState = noticeViewModel?.noticeUiState ?: NoticeUiState()
+
+    var selectedNotice: Notices? by remember {
+        mutableStateOf(null)
+    }
+
     Card(
        modifier = modifier,
 
@@ -140,6 +148,25 @@ fun NoticeCard(
                     },
                     label = {
                         Text(text = "Share with others")
+                    }
+                )
+                AssistChip(
+                    onClick = {
+//                        selectedNotice?.noticeId?.let {
+//                            noticeUiState?.delete(it)
+//                        }
+                    },
+                    colors = AssistChipDefaults.assistChipColors(
+                        leadingIconContentColor = SeaGreen
+                    ),
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Outlined.Delete,
+                            contentDescription = null
+                        )
+                    },
+                    label = {
+//                        Text(text = "")
                     }
                 )
             }
