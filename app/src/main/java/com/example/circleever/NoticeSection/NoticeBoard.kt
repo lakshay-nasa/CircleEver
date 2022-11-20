@@ -93,27 +93,40 @@ fun NoticeBoard(navController: NavController) {
 
 
             // Notice Section Heading
-            topBar = {
-                Card(modifier = Modifier
-                    .fillMaxWidth(0.8f)
-                    .clip(RectangleShape)
-                    .padding(start = 80.dp, bottom = 10.dp,top = 5.dp),
-                    backgroundColor = Warmyellow,
 
 
-                ){
-                    Text(
-                        modifier = Modifier.padding(5.dp),
-                        text = "Notice Board",
-                        textAlign = TextAlign.Center,
-                        color = SeaGreen,
-                        fontSize = 35.sp,
-                        fontFamily = maryKate,
-                        fontWeight = FontWeight.Thin,
-                        maxLines = 2,
-                        overflow = TextOverflow.Clip
-                    )
-                }
+            topBar =  {
+
+Card(
+    modifier = Modifier
+    .fillMaxWidth()
+        .padding(),
+    backgroundColor = OldLace,
+) {
+
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth(0.8f)
+            .clip(RectangleShape)
+            .padding(start = 50.dp, end = 50.dp, bottom = 10.dp, top = 5.dp),
+        backgroundColor = Warmyellow,
+
+
+        ) {
+        Text(
+            modifier = Modifier.padding(5.dp),
+            text = "Notice Board",
+            textAlign = TextAlign.Center,
+            color = SeaGreen,
+            fontSize = 35.sp,
+            fontFamily = maryKate,
+            fontWeight = FontWeight.Thin,
+            maxLines = 2,
+            overflow = TextOverflow.Clip
+        )
+    }
+}
             }
 
 
