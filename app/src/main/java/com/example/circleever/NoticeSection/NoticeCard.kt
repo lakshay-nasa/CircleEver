@@ -80,6 +80,7 @@ fun NoticeCard(
     notices:Notices,
     onNoteClick: (noticeId: String) -> Unit,
     modifier: Modifier = Modifier,
+
 ){
 
     val noticeUiState = noticeViewModel?.noticeUiState ?: NoticeUiState()
@@ -90,12 +91,15 @@ fun NoticeCard(
 
     Card(
        modifier = modifier,
+        backgroundColor = SeaGreen,
 
         shape = MaterialTheme.shapes.large
     ){
-        Image(painter = painterResource(
+        Image(
+            /*painter = painterResource(
             id = R.drawable.sampleicon
-        ),
+        ),*/
+            painter = rememberAsyncImagePainter(notices.noticeURL),
             contentDescription = null,
             modifier = Modifier
                 .clip(MaterialTheme.shapes.large)
